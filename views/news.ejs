@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<%- include  head %>
+    <body>
+        <h1><%= title %></h1>
+        <div id="releated">
+            <% for(var i = 0 ; i < news_contents.length;i++) { %>
+                <a href="<%- news_contents[i].url %>">
+                    <li><%= news_contents[i].content %></li>
+                </a>
+            <% } %>
+        </div>
+        <p>Welcome to <%= title %></p>
+    </body>
+</html>

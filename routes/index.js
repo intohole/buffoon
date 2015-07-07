@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var newsContent = require('../models/news_content.js')
 
 module.exports = function(app){        
     app.get('/',function(req,res){        
@@ -21,6 +22,9 @@ module.exports = function(app){
         res.render('index', { title: '发表' });    
     });    
     app.post('/post',function(req,res){    
+    });
+    app.get('/news' , function(req,res){
+        res.render('news' , {title: "新闻" ,news_contents:[new newsContent('http://www.baidu.com',"百度一下")]});
     }); 
 };
 
