@@ -6,6 +6,7 @@
         <div id="releated">
             <% for(var i = 0 ; i < news_contents.length;i++) { %>
                 <a href="<%- news_contents[i].url %>">
+                    <h1><%= news_contents[i].title %></h1>
                     <li><%= news_contents[i].content %></li>
                 </a>
             <% } %>

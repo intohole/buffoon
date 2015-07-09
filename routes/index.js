@@ -24,7 +24,7 @@ module.exports = function(app){
     app.post('/post',function(req,res){    
     });
     app.get('/news' , function(req,res){
-        res.render('news' , {title: "新闻" ,news_contents:[new newsContent('http://www.baidu.com',"百度一下")]});
+        res.render('news' , {title: "新闻" ,news_contents:[new newsContent({url:'http://www.baidu.com',title: 'baidu.com',author: 'li',summary:"百度一下")]});
     }); 
 };
 
