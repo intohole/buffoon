@@ -1,6 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var newsContent = require('../models/news_content.js')
+var mongoose = require('mongoose')
+var newsModule = require('../models/news_content.js')
+
+mongoose.connect("mongodb://localhost/news", function (err) {
+    if (!err) {
+        console.log("connected to mongoDB");
+    } else {
+        throw err;
+    }
+});
+
 
 module.exports = function(app){        
     app.get('/',function(req,res){        
@@ -24,7 +34,11 @@ module.exports = function(app){
     app.post('/post',function(req,res){    
     });
     app.get('/news' , function(req,res){
-        res.render('news' , {title: "新闻" ,news_contents:[new newsContent({url:'http://www.baidu.com',title: 'baidu.com',author: 'li',summary:"百度一下")]});
+        newsModule.find( {}, function(error , data){
+            console.log(error);
+            console.log(data);
+            res.render('news' , {title: "新闻" ,news_contents:[data]});
+        });
     }); 
 };
 

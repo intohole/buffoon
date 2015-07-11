@@ -7,9 +7,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose') 
+//var mongoose = require('mongoose')
 
-mongoose.connect('localhost','news')
+// 链接mogondb
+//var connect = function () {
+//  var options = { server: { socketOptions: { keepAlive: 1 } } };
+//  mongoose.createConnection('mongodb://127.0.0.1:27017/news', options);
+//};
+//
+//connect();
+//
+//mongoose.connection.on('error', console.log);
+//mongoose.connection.on('disconnected', connect);
+//
 
 //路由设置
 var routes = require('./routes/index');
