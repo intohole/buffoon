@@ -5,9 +5,12 @@
         <h1><%= title %></h1>
         <div id="releated">
             <% for(var i = 0 ; i < news_contents.length;i++) { %>
+                <h1><%= i %></h1>
                 <a href="<%- news_contents[i].url %>">
                     <h1><%= news_contents[i].title %></h1>
-                    <li><%= news_contents[i].content %></li>
+                    <li>来源:<%= news_contents[i].website  %><li>
+                    <li>作者:<%= news_contents[i].author  %><li>
+                    <li><%= news_contents[i].summary %></li>
                 </a>
             <% } %>
         </div>

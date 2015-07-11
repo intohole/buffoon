@@ -3,6 +3,8 @@ var router = express.Router();
 var mongoose = require('mongoose')
 var newsModule = require('../models/news_content.js')
 
+//不需要在appjs使用链接mongodb,在哪里使用，在哪里链接
+//链接方式：connect(uri , function(err){ do something}); 
 mongoose.connect("mongodb://localhost/news", function (err) {
     if (!err) {
         console.log("connected to mongoDB");
@@ -37,7 +39,7 @@ module.exports = function(app){
         newsModule.find( {}, function(error , data){
             console.log(error);
             console.log(data);
-            res.render('news' , {title: "新闻" ,news_contents:[data]});
+            res.render('news' , {title: "新闻" ,news_contents:data});
         });
     }); 
 };
