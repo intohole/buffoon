@@ -1,4 +1,6 @@
+logs/
 *.log
 test*
 *test*
+pid
 node_modules/

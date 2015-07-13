@@ -2,16 +2,17 @@
 <html>
 <%- include  head %>
     <body>
-        <h1><%= title %></h1>
+        <div class="site" >
+            <pre class="nav margin-for-mobile"><font size=15 ><%= title %></font></pre>
+        </div>
         <div id="releated">
             <% for(var i = 0 ; i < news_contents.length;i++) { %>
-                <h1><%= i %></h1>
-                <a href="<%- news_contents[i].url %>">
-                    <h1><%= news_contents[i].title %></h1>
-                    <li>来源:<%= news_contents[i].website  %><li>
-                    <li>作者:<%= news_contents[i].author  %><li>
-                    <li><%= news_contents[i].summary %></li>
-                </a>
+                <div float:left>
+                    <a href="<%- news_contents[i].url %>">
+                        <h4><%= news_contents[i].title %>&nbsp;&nbsp;&nbsp;&nbsp;来源:<%= news_contents[i].website  %>&nbsp;&nbsp;&nbsp;作者:<%= news_contents[i].author  %></h4>
+                        <div><%= news_contents[i].summary %></div>
+                    </a>
+                </div>
             <% } %>
         </div>
     </body>
