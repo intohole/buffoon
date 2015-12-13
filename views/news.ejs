@@ -5,15 +5,15 @@
         <div class="site" >
             <pre class="nav margin-for-mobile"><font size=15 ><%= title %></font></pre>
         </div>
-        <div id="releated">
+        <div id="home">
+        <ul class="post">
             <% for(var i = 0 ; i < news_contents.length;i++) { %>
-                <div float:left>
-                    <a href="<%- news_contents[i].url %>">
-                        <h4><%= news_contents[i].title %>&nbsp;&nbsp;&nbsp;&nbsp;来源:<%= news_contents[i].website  %>&nbsp;&nbsp;&nbsp;作者:<%= news_contents[i].author  %></h4>
-                        <div><%= news_contents[i].summary %></div>
-                    </a>
-                </div>
+            <div align="left">
+            <li><a href="<%- news_contents[i].url %>"><%= news_contents[i].title %>&nbsp;&nbsp;&nbsp;&nbsp;来源:<%= news_contents[i].website  %>&nbsp;&nbsp;&nbsp;作者:<%= news_contents[i].author  %></a></li>                        
+            <pre class="nav margin-for-mobile" width="60%" ><%= news_contents[i].summary %></pre>
+            </div>
             <% } %>
+        </ul>
         </div>
     </body>
 </html>

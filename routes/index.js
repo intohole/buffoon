@@ -15,9 +15,7 @@ mongoose.connect("mongodb://localhost/news", function (err) {
 
 
 module.exports = function(app){        
-//    app.get('/',function(req,res){        
-//        res.render('index', { title: '主页' });    
-//    });    
+
     app.get('/reg',function(req,res){        
         res.render('index', { title: '注册' });    
     });    
